@@ -4,17 +4,23 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+
 p {
    font-size: 30px;
    width: 80%; 
    text-align: justify;
 }
+
+img {
+   width: 50%;
+   size: 50%;
+}
+
 footer{
    background-color: rgb(255, 0, 0);
    font-size: 40px;
    width: 100%;
    text-align: center;
-   padding: 20px 0;
 }
 @media (max-width: 768px) {
 
