@@ -1,0 +1,96 @@
+body, header, div, footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: red;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 60px; 
+}
+
+header h2 {
+    font-size: 30px;
+}
+
+.imagens, #img_1, #img_2 {
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+}
+
+.main {
+    width: 80%;
+    text-align: center;
+}
+
+.main p {
+    font-size: 30px;
+    text-align: justify;
+    width: 80%;
+}
+
+.main h1 {
+    font-size: 60px;
+}
+
+.main h2 {
+    font-size: 50px;
+}
+
+footer {
+    background-color: yellow;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Linha divisória */
+hr {
+    border: 5px solid yellow;
+    width: 100%;
+    margin: 50px 0;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 40px;
+    }
+
+    header h2 {
+        font-size: 24px;
+    }
+
+    .imagens, #img_1, #img_2 {
+        width: 80%; 
+    }
+
+    .main p {
+        font-size: 20px;
+        width: 90%;
+    }
+
+    .main h1 {
+        font-size: 40px;
+    }
+
+    .main h2 {
+        font-size: 30px;
+    }
+
+    footer {
+        font-size: 30px;
+    }
+}
