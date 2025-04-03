@@ -9,6 +9,13 @@ p {
    width: 80%; 
    text-align: justify;
 }
+footer{
+   background-color: yellow;
+   font-size: 40px;
+   width: 100%;
+   text-align: center;
+   padding: 20px 0;
+}
 @media (max-width: 768px) {
 
  h1 {
