@@ -1,6 +1,11 @@
 body, header {
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 div {
     display: flex;
@@ -8,4 +13,8 @@ div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+img {
+    width: 20%;
+    size: 20%;
 }
