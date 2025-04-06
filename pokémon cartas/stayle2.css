@@ -18,3 +18,22 @@ img {
     width: 20%;
     size: 20%;
 }
+@media (max-width: 768px) {
+    body, header{
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div {
+        display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    img {
+        width: 30%;
+        size: 30%; 
+    }
+}
