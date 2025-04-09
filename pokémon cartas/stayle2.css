@@ -1,4 +1,4 @@
-body, header {
+body {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     display: flex;
@@ -6,6 +6,96 @@ body, header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+header{
+    background-color: red;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    
+}
+
+header img{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 4%;        
+}
+
+.componentes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+}
+
+.componentes img{
+    width: 120px;
+    height: 130px;
+}
+
+.componentes div{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.componentes2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+}
+
+.componentes2 img{
+    width: 120px;
+    height: 130px;
+}
+
+.componentes2 div{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h4{
+    display: flex;
+    text-align: center;
+}
+
+hr{
+    border: 5px solid rgb(255, 0, 0);
+    width: 100%;
+    margin: 50px 0;    
+}
+
+.preparacao{
+    display: flex;
+    flex-direction: row;
+}
+
+.preparacao img{
+    width: 10%;
+    margin-left: 3%;
+}
+
+.inicio{
+    display: flex;
+    flex-direction: row;
+}
+
+.inicio img{
+    width: 10%;
+    margin-left: 3%;
+}
+.deck1, .deck2, .deck3, .deck4, .deck5, .deck6{
+    display: flex;
+    flex-direction: row;
 }
 div {
     display: flex;
@@ -17,6 +107,14 @@ div {
 img {
     width: 20%;
     size: 20%;
+}
+
+.carta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
 }
 @media (max-width: 768px) {
     body, header{
