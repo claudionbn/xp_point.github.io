@@ -20,3 +20,11 @@ div{
 iframe{
     box-shadow:black 5px 5px 10px;
 }
+footer{
+    display: flex;
+    justify-content: center;
+    color: #eeeded;
+    margin-top: 50px;
+    background-color: #c72626;
+    font-size: 30px;
+}
