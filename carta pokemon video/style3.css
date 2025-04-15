@@ -1,4 +1,5 @@
-header{
+/* Estilo base */
+header {
     background-color: red;
     color: white;
     display: flex;
@@ -6,25 +7,86 @@ header{
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border: 2px solid black;
 }
-img{
-    width: 10%;
+
+img {
+    width: 80px;
+    max-width: 100%;
+    height: auto;
 }
-div{
+
+div {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
-iframe{
-    box-shadow:black 5px 5px 10px;
+
+iframe {
+    box-shadow: black 5px 5px 10px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 90vw;
+    height: 50vw;
+    max-width: 560px;
+    max-height: 315px;
+    border: none;
 }
-footer{
+
+footer {
     display: flex;
     justify-content: center;
     color: #eeeded;
     margin-top: 50px;
     background-color: #c72626;
-    font-size: 30px;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+hr {
+    border: 5px solid rgb(255, 0, 0);
+    width: 100%;
+    margin: 50px 0;
+    box-shadow: rgb(79, 15, 15) 5px 5px 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    header {
+        display: flex;
+        flex-direction: row;
+    }
+
+    header h1{
+        font-size: 3.5vw;
+    }
+
+    header img{
+        width: 8%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+
+    iframe {
+        width: 95vw;
+        height: 55vw;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+
+    img {
+        width: 60px;
+    }
 }

@@ -7,7 +7,8 @@ body {
     justify-content: center;
     align-items: center;
 }
-header{
+
+header {
     background-color: red;
     color: white;
     width: 100%;
@@ -18,117 +19,97 @@ header{
     align-items: center;
     border: 2px solid black;
     border-radius: 20px;
-    
+    flex-wrap: wrap;
 }
 
-header img{
-    margin-left: 2%;
-    margin-right: 2%;
-    width: 4%;        
-}
-
-.componentes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-items: center;
-    align-items: center;
-}
-
-.componentes img{
-    width: 120px;
-    height: 130px;
-}
-
-.componentes div{
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.componentes2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-items: center;
-    align-items: center;
-}
-
-.componentes2 img{
-    width: 120px;
-    height: 130px;
-}
-
-.componentes2 div{
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-h4{
-    display: flex;
+header h1{
     text-align: center;
 }
 
-hr{
+header img {
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 4%;
+}
+
+.componentes, .componentes2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.componentes img, .componentes2 img {
+    width: 120px;
+    height: 130px;
+}
+
+.componentes div, .componentes2 div {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h4 {
+    display: flex;
+    text-align: justify;
+}
+
+hr {
     border: 5px solid rgb(255, 0, 0);
     width: 100%;
-    margin: 50px 0;    
+    margin: 50px 0;
 }
 
-.preparacao{
+.preparacao, .inicio {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.preparacao img{
+.preparacao img, .inicio img {
     width: 10%;
     margin-left: 3%;
 }
 
-.inicio{
-    display: flex;
-    flex-direction: row;
-}
-
-.inicio img{
-    width: 10%;
-    margin-left: 3%;
-}
-
-#img_apoiador{
+#img_apoiador {
     width: 14%;
     margin-left: 1%;
 }
 
-.deck1, .deck2, .deck3, .deck4, .deck5, .deck6{
+.deck1, .deck2, .deck3, .deck4, .deck5, .deck6 {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
+
 div {
     display: flex;
     align-content: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-img {
-    width: 20%;
-    size: 20%;
+    margin: 20px;
 }
 
-.carta{
+img {
+    width: 200px;
+}
+
+.carta {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-items: center;
     align-items: center;
 }
 
-#tapete_jogo{
+#tapete_jogo {
     width: 50%;
     height: 60%;
 }
 
-.main h1{
+.main h1 {
     text-align: justify;
     font-size: 30px;
     text-shadow: 1px 1px 3px rgb(255, 222, 75);
@@ -139,64 +120,114 @@ img {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    justify-items: center;
-
+    flex-wrap: wrap;
 }
 
-.estrutura{
+.estrutura {
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-items: center;
 }
 
 .margin {
     margin: 20px;
 }
 
-#img_est_magmar , #img_est_energia, #img_est_item, #img_est_estadio {
+#img_est_magmar, #img_est_energia, #img_est_item, #img_est_estadio {
     height: 200px;
     width: 150px;
 }
 
-#img_est_estadio{
+#img_est_estadio {
     margin-left: 20%;
 }
-div img{
-    width: 80px;
-    box-shadow: 2px 2px 6px rgb(255, 242, 0);
-}
-div{
-    margin: 20px;
-}
-#img_est_apoiador{
+
+#img_est_apoiador {
     height: 200px;
     width: 190px;
 }
-footer{
+
+footer {
     display: flex;
     justify-content: center;
     color: #eeeded;
     margin-top: 50px;
     background-color: #c72626;
     font-size: 30px;
+    padding: 10px;
+    text-align: center;
+    flex-wrap: wrap;
 }
+
+@font-face {
+    font-family: 'anaconda';
+    src: url('AnacondaWildstyle_PERSONAL_USE_ONLY.otf');
+}
+
+/* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-    body, header{
-        align-content: center;
+    body {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        text-align: justify;
     }
-    div {
-        display: flex;
-    align-content: center;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+    header{
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
     }
-    img {
+    
+    header h1{
+        font-size: 4.5vw;
+        text-align: center;
+    }
+
+    header img {
+        width: 38px;
+        margin: 10px 10px 10px ;
+    }
+
+    .componentes, .componentes2, .estrutura_deck, .deck1, .deck2, .deck3, .deck4, .deck5, .deck6 {
+        flex-direction: column;
+    }
+
+    .preparacao img, .inicio img, #img_apoiador {
         width: 30%;
-        size: 30%; 
+        margin-left: 0;
+        margin-bottom: 10px;
     }
+
+    #tapete_jogo {
+        width: 90%;
+        height: auto;
+    }
+
+    img {
+        width: 50%;
+    }
+
+    #img_est_magmar, #img_est_energia, #img_est_item, #img_est_estadio, #img_est_apoiador {
+        width: 100px;
+        height: auto;
+    }
+
+    .main h1 {
+        font-size: 22px;
+        text-align: justify;
+    }
+
+    footer {
+        font-size: 18px;
+    }
+
+    #img_est_apoiador{
+        width: 60%;
+    }
+    
+    #img_est_item, #img_est_estadio {
+        width: 53%;
+        margin: 2%;
+    }
+  
 }
