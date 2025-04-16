@@ -59,6 +59,8 @@ hr {
     box-shadow: rgb(79, 15, 15) 5px 5px 10px;
 }
 
+
+
 /* Responsividade para telas menores */
 @media (max-width: 600px) {
     header {
