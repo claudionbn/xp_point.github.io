@@ -59,6 +59,17 @@ hr {
     box-shadow: rgb(79, 15, 15) 5px 5px 10px;
 }
 
+h1, h2, h3 {
+    font-family: 'Chewy', cursive;
+}
+body, p, li {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+
+
 
 
 /* Responsividade para telas menores */
