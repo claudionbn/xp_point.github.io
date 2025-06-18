@@ -20,3 +20,46 @@ header h1 {
 header h2 {
     color: rgb(0, 246, 246);
 }
+body p {
+    font-size: 20px;
+}
+#deckbox3 {
+    display: flex;
+    flex-direction: row;
+}
+hr {
+   border: 5px solid black;
+   width: 100%;
+}
+#meus_pokemon{
+display: flex;
+flex-direction: row;
+}
+#meus_pokemon2{
+width: 11%;
+height: 5%;
+}
+#meus_pokemon3{
+width: 25%;
+height: 15%;
+}
+#meus_pokemon4{
+width: 28%;
+height: 15%;  
+}
+#meus_pokemon5{
+display: flex;
+flex-direction: row;
+}
+#meus_pokemon6{
+width: 11%;
+height: 5%;
+}
+#meus_pokemon7{
+width: 25%;
+height: 15%;
+}
+#meus_pokemon8{
+    width: 28%;
+    height: 18%;
+}
