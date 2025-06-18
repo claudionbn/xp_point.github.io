@@ -63,3 +63,84 @@ height: 15%;
     width: 28%;
     height: 18%;
 }
+header img{
+    padding-left: 40%;
+    width: 50%;
+}
+/* Reset básico */
+
+* {
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+}
+
+body {
+
+font-family: Arial, sans-serif;
+
+}
+
+.navbar {
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+background-color: #ff0000;
+
+color: white;
+
+padding: 1rem 2rem;
+
+}
+
+.logo {
+
+font-size: 1.5rem;
+
+font-weight: bold;
+
+}
+
+.nav-links {
+
+display: flex;
+
+list-style: none;
+
+}
+
+.nav-links li {
+
+margin-left: 1.5rem;
+
+}
+
+.nav-links a {
+
+color: white;
+
+text-decoration: none;
+
+transition: color 0.3s;
+
+}
+
+.nav-links a:hover {
+
+color: #fffb02;
+
+}
+
+.content {
+
+padding: 2rem;
+
+}
