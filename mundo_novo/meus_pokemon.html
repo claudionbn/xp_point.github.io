@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Minha coleção premium de Pokémon - Especialista em TCG">
+    <meta name="keywords" content="pokémon, coleção, garchomp, lucario, gengar, zoroark, reshiram, cobalion">
+    <title>XP Point | Minha Coleção Pokémon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="shortcut icon" href="img/the world.png" type="image/x-icon">
+    <style>
+        /* Variáveis e reset */
+        :root {
+            --primary: #e60012; /* Pokémon red */
+            --secondary: #3b4cca; /* Pokémon blue */
+            --accent: #ffde00; /* Pokémon yellow */
+            --dark: #2c2c2c;
+            --light: #f8f8f8;
+            --gray: #e0e0e0;
+            --success: #4caf50;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* Header consistente com o site principal */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #a5000c 100%);
+            padding: 1rem 0;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 70px;
+            transition: var(--transition);
+        }
+        
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+        
+        .brand {
+            margin-left: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand h1 {
+            color: white;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        
+        .brand h2 {
+            color: var(--accent);
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+        
+        .navbar {
+            display: flex;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-links a i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section específica para esta página */
+        .collection-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542779283-429940ce8336?q=80&w=2070') center/cover;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .collection-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        
+        .collection-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Seção de Coleção */
+        .collection-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .pokemon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        
+        .pokemon-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .pokemon-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+        
+        .pokemon-image {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            padding: 1.5rem;
+        }
+        
+        .pokemon-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .pokemon-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .pokemon-type {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .pokemon-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pokemon-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Tipos de Pokémon */
+        .type-dragon { background: linear-gradient(135deg, #6f35fc 0%, #4a2bd9 100%); }
+        .type-fighting { background: linear-gradient(135deg, #c22e28 0%, #9e1f1a 100%); }
+        .type-ghost { background: linear-gradient(135deg, #735797 0%, #5a4779 100%); }
+        .type-dark { background: linear-gradient(135deg, #705746 0%, #584231 100%); }
+        .type-fire { background: linear-gradient(135deg, #ee8130 0%, #d16b24 100%); }
+        .type-steel { background: linear-gradient(135deg, #b7b7ce 0%, #9a9ab3 100%); }
+
+        /* Footer consistente */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: auto;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column p {
+            margin-bottom: 1.5rem;
+            color: #bbb;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .contact-info {
+            color: #bbb;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info i {
+            margin-right: 12px;
+            color: var(--accent);
+            font-size: 1.2rem;
+            width: 24px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .brand {
+                margin: 15px 0;
+            }
+            
+            .nav-links {
+                margin-top: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem;
+            }
+            
+            .collection-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .collection-hero p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .collection-hero {
+                height: 30vh;
+            }
+            
+            .collection-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .collection-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .pokemon-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header consistente com o site principal -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/logo-removebg-preview.png" alt="XP Point Logo">
+                <div class="brand">
+                    <h1>XP Point</h1>
+                    <h2>Especialista em Pokémon TCG</h2>
+                </div>
+            </div>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="/xp_point.github.io\mundo_novo\new world.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="index.html#deck-lucario"><i class="fas fa-cards"></i> Análises</a></li>
+                    <li><a href="index.html#deckbox"><i class="fas fa-box-open"></i> Deckbox</a></li>
+                    <li><a href="#"><i class="fas fa-dragon"></i> Meu Time</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section específica para coleção -->
+    <section class="collection-hero">
+        <h1>Minha Coleção Pokémon</h1>
+        <p>Time premium selecionado para torneios e exibição</p>
+    </section>
+
+    <!-- Seção da Coleção -->
+    <section class="collection-section">
+        <div class="section-title">
+            <h2>Meu Time Principal</h2>
+        </div>
+        
+        <div class="pokemon-grid">
+            <!-- Garchomp -->
+            <div class="pokemon-card">
+                <img src="img/garchomp_da_cynthia.png" alt="Garchomp da Cynthia" class="pokemon-image">
+                <div class="pokemon-info">
+                    <h3 class="pokemon-name">Garchomp</h3>
+                    <span class="pokemon-type type-dragon">Dragão/Terrestre</span>
+                    <p class="pokemon-description">Poderoso Pokémon da Cynthia, especialista em ataques rápidos e devastadores.</p>
+                    <div class="pokemon-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">108</div>
+                            <div class="stat-label">Ataque</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">95</div>
+                            <div class="stat-label">Veloc.</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">600</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lucario -->
+            <div class="pokemon-card">
+                <img src="img/lucario.png" alt="Lucario" class="pokemon-image">
+                <div class="pokemon-info">
+                    <h3 class="pokemon-name">Lucario</h3>
+                    <span class="pokemon-type type-fighting">Lutador/Aço</span>
+                    <p class="pokemon-description">Mestre em ataques de aura, essencial para estratégias ofensivas e defensivas.</p>
+                    <div class="pokemon-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">110</div>
+                            <div class="stat-label">Ataque</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">90</div>
+                            <div class="stat-label">Veloc.</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">525</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gengar -->
+            <div class="pokemon-card">
+                <img src="img/gengar.png" alt="Gengar" class="pokemon-image">
+                <div class="pokemon-info">
+                    <h3 class="pokemon-name">Gengar</h3>
+                    <span class="pokemon-type type-ghost">Fantasma/Veneno</span>
+                    <p class="pokemon-description">Estrategista sombrio com ataques surpresa e habilidades de infiltração.</p>
+                    <div class="pokemon-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">65</div>
+                            <div class="stat-label">Defesa</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">110</div>
+                            <div class="stat-label">Sp.Atk</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">500</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Zoroark Shiny -->
+            <div class="pokemon-card">
+                <img src="img/zoroark_shiny.png" alt="Zoroark Shiny" class="pokemon-image">
+                <div class="pokemon-info">
+                    <h3 class="pokemon-name">Zoroark Shiny</h3>
+                    <span class="pokemon-type type-dark">Sombrio</span>
+                    <p class="pokemon-description">Variante rara com habilidades de ilusão aprimoradas e ataques surpresa.</p>
+                    <div class="pokemon-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">105</div>
+                            <div class="stat-label">Sp.Atk</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">105</div>
+                            <div class="stat-label">Veloc.</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">510</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reshiram -->
+            <div class="pokemon-card">
+                <img src="img/reshiram.png" alt="Reshiram" class="pokemon-image">
+                <div class="pokemon-info">
+                    <h3 class="pokemon-name">Reshiram</h3>
+                    <span class="pokemon-type type-fire">Dragão/Fogo</span>
+                    <p class="pokemon-description">Lendário da verdade, com ataques de fogo devastadores e alta resistência.</p>
+                    <div class="pokemon-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">120</div>
+                            <div class="stat-label">Sp.Atk</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">100</div>
+                            <div class="stat-label">Defesa</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">680</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cobalion Shiny -->
+            <div class="pokemon-card">
+                <img src="img/cobalion_shiny.png" alt="Cobalion Shiny" class="pokemon-image">
+                <div class="pokemon-info">
+                    <h3 class="pokemon-name">Cobalion Shiny</h3>
+                    <span class="pokemon-type type-steel">Aço/Lutador</span>
+                    <p class="pokemon-description">Lendário de aço com defesa impenetrável e contra-ataques precisos.</p>
+                    <div class="pokemon-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">90</div>
+                            <div class="stat-label">Ataque</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">129</div>
+                            <div class="stat-label">Defesa</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">580</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer consistente -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>XP Point</h3>
+                <p>Especialista em Pokémon TCG com anos de experiência no mercado competitivo e análise de decks.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/claudionbn/?next=%2F"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@NBN_BR"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#deck-lucario"><i class="fas fa-caret-right"></i> Análise de Decks</a></li>
+                    <li><a href="index.html#deckbox"><i class="fas fa-caret-right"></i> Coleção Premium</a></li>
+                    <li><a href="#"><i class="fas fa-caret-right"></i> Meu Time Pokémon</a></li>
+                    <li><a href="#"><i class="fas fa-caret-right"></i> Estratégias Competitivas</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <div class="contact-info">
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <span>claudionbn10@gmail.com</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <span>(86) 98162-7501</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Recife - PE, Brasil</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 XP Point. Todos os direitos reservados. Pokémon e seus respectivos nomes são marcas registradas da Nintendo, Creatures Inc. e GAME FREAK Inc.</p>
+        </div>
+    </footer>
+</body>
+</html>
