@@ -12,8 +12,10 @@ header{
 }
 
 nav a img{
-    width: 25%;
-    height: 25%;
+    flex-direction: row;
+    width: 400px;
+    height: 400px;
+    padding: 1%;
 }
 
 footer{
